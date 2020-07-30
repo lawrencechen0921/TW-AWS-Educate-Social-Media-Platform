@@ -31,7 +31,7 @@
                     <label for="image" class="col-md-4 col-form-label">Post Image</label>
                     <input type="file" class="form-control-file" id="image" name="image">
                     @error('image')
-                        <strong>{{ $image }}</strong>
+                        <strong>{{ $image ?? '' }}</strong>
                     @enderror
                 </div>
 

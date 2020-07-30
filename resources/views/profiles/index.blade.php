@@ -9,7 +9,7 @@
         <div class="col-9 pt-5">
             <div class = "d-flex justify-content-between align-items-baseline">
                 <h1>{{Auth::user()->username}}</h1>
-                <a href="#"> Add new post</a>
+                <a href="/p/create"> Add new post</a>
             </div>
 
             <div class="d-flex">
@@ -24,15 +24,11 @@
     </div>
 
     <div class="row pt-5">
+        @foreach($user->posts as $post)
         <div class="col-4">
-            <img src="https://scontent.frmq2-2.fna.fbcdn.net/v/t1.0-9/109812783_151129193216138_1467069223621237658_n.jpg?_nc_cat=100&amp;_nc_sid=730e14&amp;_nc_ohc=i8d0tFCMvLwAX_uiWmD&amp;_nc_ht=scontent.frmq2-2.fna&amp;oh=74a51f7f8e545a93adee9987a070d44e&amp;oe=5F3E6C00" class="w-100">"
+            <img src="/storage/{{ $post->image }}" class="w-100">
         </div>
-        <div class="col-4">
-            <img src="https://scontent.frmq2-2.fna.fbcdn.net/v/t1.0-9/107548975_151129279882796_2943187634429247992_o.jpg?_nc_cat=109&amp;_nc_sid=730e14&amp;_nc_ohc=LvzH_vTBzN4AX9YPsV4&amp;_nc_ht=scontent.frmq2-2.fna&amp;oh=056fb26f6f39b27f488e7d07db7b1e8c&amp;oe=5F3EB6C1" class="w-100">"
-        </div>
-        <div class="col-4">
-            <img src="https://scontent.frmq2-1.fna.fbcdn.net/v/t1.0-9/109809652_151134166548974_3359074431158313771_o.jpg?_nc_cat=102&amp;_nc_sid=730e14&amp;_nc_ohc=Sr9kFOj4bUcAX-sgOeF&amp;_nc_ht=scontent.frmq2-1.fna&amp;oh=3e3eb2996153b7b2ef4be5804a83f941&amp;oe=5F3F7B1F" class="w-100">"
-        </div>
-
+        @endforeach
+    </div>
 </div>
 @endsection
