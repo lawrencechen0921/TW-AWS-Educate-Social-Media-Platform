@@ -11,6 +11,7 @@
                 <h1>{{Auth::user()->username}}</h1>
                 <a href="/p/create"> Add new post</a>
             </div>
+            <a href="/profile/{{ $user->id }}/edit" >Edit Profie</a>
 
             <div class="d-flex">
                 <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> post</div>
