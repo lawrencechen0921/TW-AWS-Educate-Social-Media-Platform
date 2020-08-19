@@ -20,7 +20,7 @@
                                type="text" 
                                class="form-control @error('title') is-invalid @enderror" 
                                name="title"
-                               value="{{ old('title') }}" 
+                               value="{{ old('title') ?? $user->profile->title }}" 
                                required autocomplete="title" autofocus>
 
                         @error('caption')
@@ -37,7 +37,7 @@
                                type="text" 
                                class="form-control @error('description') is-invalid @enderror" 
                                name="description"
-                               value="{{ old('description') }}" 
+                               value="{{ old('description') ?? $user->profile->description }}" 
                                required autocomplete="description" autofocus>
 
                         @error('caption')
@@ -54,7 +54,7 @@
                                type="text" 
                                class="form-control @error('url') is-invalid @enderror" 
                                name="url"
-                               value="{{ old('url') }}" 
+                               value="{{ old('url') ?? $user->profile->url}}" 
                                required autocomplete="url" autofocus>
 
                         @error('caption')
@@ -73,7 +73,7 @@
                 </div>
 
                 <div class = "row pt-4" >
-                    <button class ="btn btn-primary">Save Profile</button>
+                    <button class ="btn btn-primary">Save Profile </button>
                 </div>  
             </div>
         </div>

@@ -11,12 +11,15 @@
                 <h1>{{Auth::user()->username}}</h1>
                 <a href="/p/create"> Add new post</a>
             </div>
+
+            @can('update', $user->profile)
             <a href="/profile/{{ $user->id }}/edit" >Edit Profie</a>
+            @endcan
 
             <div class="d-flex">
                 <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> post</div>
                 <div class="pr-5"><strong>12</strong> followers</div>
-                <div class="pr-5"><strong>0</strong> following</div>
+                <div class="pr-5"><strong>0</strong> following</div> 
             </div>
             <div class="pt-4 font-weight-bold">{{Auth::user()->profile->title}}</div>
             <div>{{ Auth::user()->profile->description }}</div>
