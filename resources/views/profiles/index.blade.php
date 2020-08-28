@@ -8,8 +8,12 @@
         </div>
         <div class="col-9 pt-5">
             <div class = "d-flex justify-content-between align-items-baseline">
-                <h1>{{Auth::user()->username}}</h1>
-                <a href="/p/create"> Add new post</a>
+                <h1>{{ $user->username}}</h1>
+                @can('update', $user->profile)
+                    <a href="/p/create"> Add new post</a>
+                @endcan
+
+                
             </div>
 
             @can('update', $user->profile)
@@ -17,13 +21,13 @@
             @endcan
 
             <div class="d-flex">
-                <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> post</div>
+                <div class="pr-5"><strong>{{ $user->posts->count()}}</strong> post</div>
                 <div class="pr-5"><strong>12</strong> followers</div>
                 <div class="pr-5"><strong>0</strong> following</div> 
             </div>
-            <div class="pt-4 font-weight-bold">{{Auth::user()->profile->title}}</div>
-            <div>{{ Auth::user()->profile->description }}</div>
-            <div><a href = "#" >{{ Auth::user()->profile->url }} </a></div>
+            <div class="pt-4 font-weight-bold">{{ $user->profile->title}}</div>
+            <div>{{ $user->profile->description }}</div>
+            <div><a href = "#" >{{ $user->profile->url }} </a></div>
         </div>
     </div>
 

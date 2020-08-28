@@ -11,6 +11,7 @@
                 <h3>{{$post->user->username}}</h3>
             </div>
             <p>{{$post->caption}}</p>
+            
 
         </div>
     </div>
